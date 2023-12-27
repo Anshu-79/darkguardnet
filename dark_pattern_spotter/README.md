@@ -1,4 +1,4 @@
-# Dark Pattern Classifier
+# Dark Pattern Spotter
 
 ## Description
 This module aims to analyze text and identify the presence of dark patterns. The module leverages the BERT (Bidirectional Encoder Representations from Transformers) classification model to examine text and flag instances of deceptive language, coercive tactics.

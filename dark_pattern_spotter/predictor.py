@@ -39,6 +39,7 @@ def is_dark_pattern(input_text: str, return_probabilites: bool = False) -> Union
     if return_probabilites:
         probabilities = logits.squeeze(0).tolist()
         confidence = (max(probabilities) - min(probabilities)) / 10
+        confidence = confidence if confidence <= 1 else 1
         
         return is_dp, confidence
     
@@ -47,12 +48,7 @@ def is_dark_pattern(input_text: str, return_probabilites: bool = False) -> Union
     
 def are_dark_patterns(input_list: List[str], return_probabilites: bool = False) -> List[Union[bool, Tuple[bool, float]]]:
     """
-    Simply runs is_dark_patterns() for a sequence of values and returns the result as a list.
+    Simply runs is_dark_pattern() for a sequence of values and returns the result as a list.
     """
+    return [is_dark_pattern(text, return_probabilites=return_probabilites) for text in input_list]
 
-    predictions = []
-    for text in input_list:
-        prediction = is_dark_pattern(text, return_probabilites=return_probabilites)
-        predictions.append(prediction)
-    
-    return predictions
