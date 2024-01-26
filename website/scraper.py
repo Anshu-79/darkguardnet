@@ -15,7 +15,8 @@ def extract_phrases(url):
         # Splitting text into phrases based on punctuation
         phrases.extend(re.split(r'[.!?]', text))
 
-    # Remove empty strings and strip whitespaces
-    phrases = [phrase.strip() for phrase in phrases if phrase.strip()]
+    # Remove single words, empty strings and strip whitespaces
+    phrases = [phrase for phrase in phrases if len(phrase.split()) > 1]
 
-    return phrases
+    # Remove duplicate phrases
+    return list(set(phrases))

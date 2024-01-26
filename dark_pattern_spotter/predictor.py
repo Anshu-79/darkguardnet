@@ -1,19 +1,18 @@
 import torch
 from typing import Union, Tuple, List
 
-from consts import CHECKPOINT_DIR, MAX_LENGTH
-from model import generate_model, generate_tokenizer
-from utils import load_dicts, text_to_tensor
+from dark_pattern_spotter.consts import CHECKPOINT_DIR, MAX_LENGTH
+from dark_pattern_spotter.model import generate_model, generate_tokenizer
+from dark_pattern_spotter.utils import load_dicts, text_to_tensor
 
 
 def make_prediction(input_text: str) -> torch.Tensor:
     """
     Initializes the model, runs it and returns the output tensor.
     """
-
     model = generate_model()
     tokenizer = generate_tokenizer()
-    checkpoint = torch.load(CHECKPOINT_DIR, map_location='cpu')
+    checkpoint = torch.load(CHECKPOINT_DIR)
     load_dicts(model, checkpoint)
 
     with torch.no_grad():

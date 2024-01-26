@@ -2,9 +2,9 @@ import torch
 from transformers import BertModel
 from typing import Union, Tuple, List
 
-from consts import CHECKPOINT_DIR, MAX_LENGTH, CATEGORY_MAPPING
-from model import generate_model, generate_tokenizer
-from utils import load_dicts, encoder
+from dark_pattern_classifier.consts import CHECKPOINT_DIR, MAX_LENGTH, CATEGORY_MAPPING
+from dark_pattern_classifier.model import generate_model, generate_tokenizer
+from dark_pattern_classifier.utils import load_dicts, encoder
 
 def make_prediction(input_text: str) -> str:
     """
@@ -13,7 +13,7 @@ def make_prediction(input_text: str) -> str:
 
     model = generate_model()
     tokenizer = generate_tokenizer()
-    checkpoint = torch.load(CHECKPOINT_DIR, map_location='cpu')
+    checkpoint = torch.load(CHECKPOINT_DIR)
     load_dicts(model, checkpoint)
 
     with torch.no_grad():

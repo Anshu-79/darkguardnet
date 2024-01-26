@@ -1,12 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type='text/css' href="{% static 'webapp/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <title>Your Webpage Title</title>
+    <title>Results Page</title>
     <style>
         body {
             background-color: #0A0908;
@@ -99,21 +101,21 @@
 <body>
     <div class="container">
         <div class="text-box1">
-            <span style="font-weight: bold;">Total Phrases:</span>
+            <span style="font-weight: bold;">Total Phrases: {{ processed_data.0 }}</span>
       </div>
       <div class="text-box2">
-            <span style="font-weight: bold;">Number of<br> Dark Pattern Found:<br/></span>
+            <span style="font-weight: bold;">Number of Dark Pattern Found: {{ processed_data.1 }}<br/></span>
       </div>
       <div class="text-box3">
-            <span style="font-weight: bold;">Misdirection</span>
+            <span style="font-weight: bold;">Misdirection: {{ processed_data.2 }}</span>
       </div>
       <div class="text-box4">
-         <span style="font-weight: bold;">Scarcity</span>
+         <span style="font-weight: bold;">Scarcity: {{ processed_data.3 }}</span>
       </div>
       <div class="text-box5">
-         <span style="font-weight: bold;">Social Proof</span>
+         <span style="font-weight: bold;">Social Proof: {{ processed_data.4 }}</span>
       </div> <div class="text-box6">
-         <span style="font-weight: bold;">Urgency</span>
+         <span style="font-weight: bold;">Urgency: {{ processed_data.5 }}</span>
       </div>
       
     

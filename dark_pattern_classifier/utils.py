@@ -2,6 +2,7 @@ import torch
 from transformers import BertModel, BertTokenizer
 from collections import OrderedDict
 
+from dark_pattern_classifier.consts import device
 
 def load_dicts(model: BertModel, checkpoint: OrderedDict) -> None:
     model_dict = model.state_dict()
@@ -19,4 +20,4 @@ def encoder(text: str, tokenizer: BertTokenizer, max_length: int) -> torch.Tenso
         padding='max_length',
         return_attention_mask=True,
         truncation=True,
-        return_tensors='pt')
+        return_tensors='pt').to(device)
