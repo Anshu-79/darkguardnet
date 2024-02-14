@@ -65,16 +65,16 @@
 <body>
     <div class="container">
         <div class="text-box">
-            <span style="font-weight: bold;">Dark</span> Patterns <br/>can be <span style="font-weight: 500;">
+            <div style="font-weight: bold;">Dark Patterns <br>can be
                 <div class="rough-underline">ANYWHERE</div>
-            </span>
+            </div>
         </div>
 
         <form method="post" action="{% url 'submit_form' %}">
             {% csrf_token %}
             <input type="text" class="input-box" id="your_textbox_id" name="inputbox" placeholder="Enter URL or Product name" value="{{ request.POST.inputbox }}">
             <div style="width: 150px; height: 65px; left: 650px; top: 650px; position: absolute">
-            <button type="submit" class="custom-button">CHECK</button>
+            <button type="submit" id="search-button" class="custom-button" onclick="showLoadingOverlay()">CHECK</button>
         </form>
         
     </div>

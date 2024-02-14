@@ -16,7 +16,7 @@ def extract_phrases(url):
         phrases.extend(re.split(r'[.!?]', text))
 
     # Remove single words, empty strings and strip whitespaces
-    phrases = [phrase for phrase in phrases if len(phrase.split()) > 1]
+    phrases = [phrase for phrase in phrases if len(phrase.split()) > 2]
 
     # Remove duplicate phrases
     return list(set(phrases))

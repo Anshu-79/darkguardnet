@@ -4,7 +4,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type='text/css' href="{% static 'webapp/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
@@ -19,106 +18,49 @@
             position: absolute;
             background: #0A0908;
         }
-
-      .text-box1 {
-          width: 1000px;
-          left: 200px;
-          top: 100px;
-          position: absolute;
-          color: #FE5F00;
-          font-size: 50px;
-          font-family: 'Archivo Black',     
-          sans-serif;
-          font-weight: bold;
-          word-wrap: break-word;
-      }
-      .text-box2 {
-          width: 1000px;
-          left: 200px;
-          top: 200px;
-          position: absolute;
-          color: #FE5F00;
-          font-size: 50px;
-          font-family: 'Archivo Black',     
-          sans-serif;
-          font-weight: bold;
-          word-wrap: break-word;
+        .cat-header {
+            width: 285px;
+            position: absolute;
+            top: 550px;
+            color: #623CEA;
+            font-size: 40px;
+            font-family: 'Archivo Black',     
+            sans-serif;
+            font-weight: bold;
+            word-wrap: break-word;
         }
-      .text-box3 {
-          width: 1000px;
-          left: 200px;
-          top: 400px;
-          position: absolute;
-          color: #FE5F00;
-          font-size: 25px;
-          font-family: 'Archivo Black',     
-          sans-serif;
-          font-weight: bold;
-          word-wrap: break-word;
-
-      }
-      .text-box4 {
-          width: 1000px;
-          left: 500px;
-          top: 400px;
-          position: absolute;
-          color: #FE5F00;
-          font-size: 25px;
-          font-family: 'Archivo Black',     
-          sans-serif;
-          font-weight: bold;
-          word-wrap: break-word;
-
-      }
-      .text-box5 {
-          width: 1000px;
-          left: 800px;
-          top: 400px;
-          position: absolute;
-          color: #FE5F00;
-          font-size: 25px;
-          font-family: 'Archivo Black',     
-          sans-serif;
-          font-weight: bold;
-          word-wrap: break-word;
-
-      }
-      .text-box6 {
-          width: 1100px;
-          left: 1150px;
-          top: 400px;
-          position: absolute;
-          color: #FE5F00;
-          font-size: 25px;
-          font-family: 'Archivo Black',     
-          sans-serif;
-          font-weight: bold;
-          word-wrap: break-word;
-
-      }
+        .cat-count{
+            color: #FFF;
+            top: 50px;
+            position: absolute;
+            font-size: 90px;
+            
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="text-box1">
-            <span style="font-weight: bold;">Total Phrases: {{ processed_data.0 }}</span>
+        <script>
+            hideLoadingOverlay();  // Hide the loading overlay when results are ready
+        </script>
+        <div class="main-text" style="top: 100px;">Total Phrases: 
+            <span style="color: #FFF">{{ processed_data.0 }}</span>
       </div>
-      <div class="text-box2">
-            <span style="font-weight: bold;">Number of Dark Pattern Found: {{ processed_data.1 }}<br/></span>
+      <div class="main-text" style="top: 200px">Number of Dark Patterns:
+            <span style="color: #FFF">{{ processed_data.1 }}</span>
       </div>
-      <div class="text-box3">
-            <span style="font-weight: bold;">Misdirection: {{ processed_data.2 }}</span>
+      <div class="cat-header" style="left: 50px">Misdirection
+            <span class="cat-count" style="left: 95px;">{{ processed_data.2 }}</span>
       </div>
-      <div class="text-box4">
-         <span style="font-weight: bold;">Scarcity: {{ processed_data.3 }}</span>
+      <div class="cat-header" style="left: 500px">Scarcity
+         <span class="cat-count" style="left: 60px;">{{ processed_data.3 }}</span>
       </div>
-      <div class="text-box5">
-         <span style="font-weight: bold;">Social Proof: {{ processed_data.4 }}</span>
-      </div> <div class="text-box6">
-         <span style="font-weight: bold;">Urgency: {{ processed_data.5 }}</span>
+      <div class="cat-header" style=" left: 900px">Social Proof
+         <span class="cat-count" style="left: 115px;">{{ processed_data.4 }}</span>
       </div>
-      
-    
+      <div class="cat-header" style="left: 1300px">Urgency
+         <span class="cat-count" style="left: 65px;">{{ processed_data.5 }}</span>
+      </div>
 
 </body>
 </html>

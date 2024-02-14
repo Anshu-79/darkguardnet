@@ -9,12 +9,12 @@ warnings.filterwarnings("ignore")
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 sys.path.append('D:/Programming/DPBH-Team_Veritas/')
 
-import website.scraper
+import scraper
 from dark_pattern_spotter import predictor as dps_predictor
 from dark_pattern_classifier import predictor as dpc_predictor
 
 def scrape(text):
-    return website.scraper.extract_phrases(text)
+    return scraper.extract_phrases(text)
 
 def submit_form(request):
     if request.method == 'POST':
