@@ -1,4 +1,4 @@
-# DPB Hackathon - TEAM VERITAS
+# DarkGuardNet
 
 ## Description
 Dark patterns are manipulative design techniques used to deceive or coerce users into taking actions they may not have intended.
