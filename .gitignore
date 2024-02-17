@@ -3,3 +3,5 @@ dark_pattern_spotter/__pycache__
 dark_pattern_classifier/training/models/4_category+non_dp_classifier.pth
 dark_pattern_classifier/training/models/6_category_classifier.pth
 dark_pattern_classifier/__pycache__
+__pycache__
+dpb_env
